@@ -1,0 +1,16 @@
+.news-item-block {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 65%;
+    flex-direction: column;
+
+    &__description {
+        margin: 25px 0 15px;
+    }
+
+    & p a {
+        text-decoration: underline;
+    }
+}

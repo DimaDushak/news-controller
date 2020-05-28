@@ -1,0 +1,49 @@
+.news-block {
+    padding: 20px;
+
+    &__list {
+        padding-top: 25px;
+    }
+
+    &__item {
+        padding-bottom: 25px;
+
+        &-description {
+            padding: 25px 0 15px;
+        }
+
+        & hr {
+            margin-top: 25px;
+        }
+    }
+
+    &__button-block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        cursor: pointer;
+        padding: 5px;
+        outline: 0;
+
+        &_desable {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    }
+
+    &_none {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.link-back {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

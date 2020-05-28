@@ -1,0 +1,11 @@
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    & li {
+        margin: 25px 0;
+    }
+}
