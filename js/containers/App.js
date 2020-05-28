@@ -13,12 +13,20 @@ class App extends React.Component {
         this.openNewsList = this.openNewsList.bind(this);
         this.openNewsItem = this.openNewsItem.bind(this);
         this.addNewsTextHTML = this.addNewsTextHTML.bind(this);
+        this.createDate = this.createDate.bind(this);
     }
 
     addNewsTextHTML() {
         return {
             __html: this.props.newsText
         }
+    }
+
+    createDate(date) {
+        const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+        const arr = [date.slice(8, 10), date.slice(5, 7) - 1, date.slice(0, 4) + 'г.'];
+
+        return `${arr[0]} ${months[arr[1]]} ${arr[2]}`;
     }
 
     openNewsList(categoriesId, pageNumber) {
@@ -64,7 +72,7 @@ class App extends React.Component {
             <Router>
                 <Route exact path="/" render={() => <CategoriesList categories={this.props.categories}
                     openNewsList={this.openNewsList} />} />
-                <Route exact path="/newsBlock" render={() => <NewsBlock news={this.props.news}
+                <Route exact path="/newsBlock" render={() => <NewsBlock news={this.props.news} createDate={this.createDate}
                     pageNumber={this.props.pageNumber} changePageNumber={this.props.changePageNumber} openNewsItem={this.openNewsItem} />} />
                 <Route exact path="/newsItemBlock/:title/:description" render={() => <NewsItemBlock addNewsTextHTML={this.addNewsTextHTML} />} />
             </Router>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NewsBlock = (props) => {
-    const { news, openNewsItem, changePageNumber } = props;
+    const { news, openNewsItem, changePageNumber, createDate } = props;
     let { pageNumber } = props;
 
     if (news.length > 0) {
@@ -18,7 +18,7 @@ const NewsBlock = (props) => {
                                       onClick={() => openNewsItem(item.id)}>
                                         <h2>{item.title}</h2>
                                         <p className="news-block__item-description">{item.shortDescription}</p>
-                                        <div>{item.date}</div>
+                                        <div>{createDate(item.date)}</div>
                                     </Link>
                                     <hr />
                                 </li>
